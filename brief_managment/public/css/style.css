@@ -1,0 +1,124 @@
+#main_content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#first_div {
+    display: flex;
+    flex-direction: row-reverse;
+    margin-top: 60px;
+}
+
+#first_div input {
+    width: 300px;
+    height: 57px;
+    font-size: 20px;
+    border-radius: 5px;
+    margin-left: 100px;
+}
+
+#first_div a {
+    text-decoration: none;
+    color: white;
+    font-size: 26px;
+    background-color: rgba(241, 157, 143, 0.791);
+    border-radius: 5px;
+    padding: 10px;
+    margin-left: 400px;
+}
+
+#second_div {
+    width: 70%;
+}
+
+
+#promotion_table {
+    font-size: 25px;
+    margin-top: 60px;
+    --bs-table-striped-bg: rgba(247, 244, 237, 0.694);
+    --bs-table-accent-bg: rgba(173, 197, 195, 0.382);
+    /* box-shadow: 5px 5px 5px red; */
+}
+
+#promotion_table tr:last-child td:first-child {
+    border-bottom-left-radius: 15px;
+}
+
+#promotion_table tr:last-child td:last-child {
+    border-bottom-right-radius: 15px;
+}
+
+
+#promotion_table th:first-child {
+    border-top-left-radius: 15px;
+}
+
+#promotion_table th:last-child {
+    border-top-right-radius: 15px;
+}
+
+#promotion_table th {
+    --bs-table-accent-bg: rgba(14, 110, 105, 0.29);
+    font-weight: 400;
+
+}
+
+#promotion_table th,
+td {
+    text-align: center;
+    padding: 40px;
+
+
+
+}
+
+#promotion_table td {
+    padding: 30px;
+    font-weight: 300;
+}
+
+#promotions_setting a:first-child {
+    text-decoration: none;
+    margin: 15px;
+    background-color: rgba(160, 216, 191, 0.574);
+    padding: 5px 10px;
+    border-radius: 10px;
+    color: black;
+}
+
+#promotions_setting a:nth-child(2) {
+    text-decoration: none;
+    margin: 15px;
+    background-color: rgba(243, 152, 144, 0.574);
+    padding: 5px 10px;
+    border-radius: 10px;
+    color: rgb(40, 32, 32);
+}
+
+
+/* edit promotion page */
+
+.editPromo_form input {
+    width: 400px;
+    height: 60px;
+    font-size: 30px;
+    border-radius: 5px;
+
+}
+
+.editPromo_form button {
+    width: 100px;
+    height: 60px;
+    border-style: none;
+    font-size: 30px;
+    border-radius: 5px;
+    margin-left: 30px;
+
+}
+
+#add_student_link {
+    color: black;
+
+}
