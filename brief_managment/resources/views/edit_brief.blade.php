@@ -14,5 +14,18 @@
         <input name="date_livraison" type="date" value="{{$brief->livrasion_date}}">
         <input name="modifier_brief" type="submit" value="modifier">
     </form>
+
+    <div>
+        <h3>Brief Tasks</h3>
+
+        <ul>
+            @if (count($brief->task) > 0)
+            @foreach ($brief->task as $brief_tasks)
+            <li>{{$brief_tasks->task_title}}</li>
+        @endforeach
+            @endif
+        </ul>
+    </div>
+
 </body>
 </html>

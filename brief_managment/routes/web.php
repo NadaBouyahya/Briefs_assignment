@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\Brief_controller;
+use App\Http\Controllers\task_controller;
+
 use App\Http\Controllers\promotions_controller;
 use App\Http\Controllers\students_controller;
 use App\Models\Promotion;
@@ -68,3 +70,8 @@ Route::get('/edit_brief/{id}', [Brief_controller::class, 'edit_brief_view']);
 
 // save updated brief 
 Route::post('/updated_brief/{id}', [Brief_controller::class, 'updated_brief']);
+
+
+
+// show tasks 
+Route::post('/task_list', [task_controller::class, 'updated_brief']);

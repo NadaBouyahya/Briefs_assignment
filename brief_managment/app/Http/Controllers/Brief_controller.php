@@ -8,10 +8,13 @@ use Illuminate\Http\Request;
 
 class Brief_controller extends Controller
 {
+
+    //select all briefs :
     public function display_briefs(){
         $briefs = brief::all();
         return view('brief_list', compact('briefs'));
     }
+
 
     public function insert_brief(Request $brief_form_request){
         $briefs = new brief();
