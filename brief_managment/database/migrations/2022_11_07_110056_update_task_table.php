@@ -13,12 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('briefs', function (Blueprint $table) {
-            $table->bigIncrements('id_brief');	
-            $table->string('brief_title');
-            $table->date('creation_date');
-            $table->date('livrasion_date');
-            $table->timestamps();
+        Schema::table('task', function (Blueprint $table) {
+            $table->string('task_description');
         });
     }
 
@@ -29,6 +25,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('briefs');
+        Schema::table('task', function (Blueprint $table) {
+            //
+        });
     }
 };

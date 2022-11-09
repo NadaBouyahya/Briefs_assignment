@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Brief_controller;
 use App\Http\Controllers\promotions_controller;
 use App\Http\Controllers\students_controller;
 use App\Models\Promotion;
@@ -54,3 +55,10 @@ Route::post('/student_saved/{id}', [students_controller::class, 'update_student'
 // delete student
 
 Route::get('/student_deleted/{id}', [students_controller::class, 'delete_student']);
+
+
+// display brief
+
+Route::get('/brief_list', [Brief_controller::class, 'display_briefs']);
+
+Route::post('/insert_brief', [Brief_controller::class, 'insert_brief']);

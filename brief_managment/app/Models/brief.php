@@ -7,5 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class brief extends Model
 {
-    use HasFactory;
+    // use HasFactory;
+    public function task(){
+        return $this->hasMany(task::class, 'briefTask_id', 'id_brief');
+    }
 }

@@ -13,12 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('briefs', function (Blueprint $table) {
-            $table->bigIncrements('id_brief');	
-            $table->string('brief_title');
-            $table->date('creation_date');
-            $table->date('livrasion_date');
-            $table->timestamps();
+        Schema::table('briefs', function (Blueprint $table) {
+            $table->renameColumn('brief_title', 'brief_title');
+        });
+
+        Schema::table('task', function (Blueprint $table) {
+            $table->renameColumn('name', 'task_title');
         });
     }
 
@@ -29,6 +29,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('briefs');
+        Schema::table('briefs', function (Blueprint $table) {
+            //
+        });
     }
 };
