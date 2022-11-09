@@ -44,5 +44,6 @@ class task_controller extends Controller
                        'task_end_time'=>$updating_req->task_end_time,
                        'briefTask_id'=>$updating_req->brief_id
                     ));
+        return redirect("edit_brief/". $updating_req->brief_id);
     }
 }
