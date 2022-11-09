@@ -51,11 +51,9 @@ Route::post('/insert_student', [students_controller::class, 'add_student']);
 Route::get('/edit_student_form/{id}', [students_controller::class, 'edit_student_view']);
 
 // save students modification
-
 Route::post('/student_saved/{id}', [students_controller::class, 'update_student']);
 
 // delete student
-
 Route::get('/student_deleted/{id}', [students_controller::class, 'delete_student']);
 
 
@@ -78,9 +76,8 @@ Route::post('/task_list', [task_controller::class, 'updated_brief']);
 
 // add task 
 Route::get('/add_task_view/{id}', [task_controller::class, 'add_task_view']);
-
 Route::post('/insert_task/{id}', [task_controller::class, 'insert_task']);
 
 //edit task
-
-route
+Route::get('/edit_task_view/{id}', [task_controller::class, 'edit_task_form']);
+Route::post('/updated_task/{id}', [task_controller::class, 'update_task']);
