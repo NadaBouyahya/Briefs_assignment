@@ -58,7 +58,13 @@ Route::get('/student_deleted/{id}', [students_controller::class, 'delete_student
 
 
 // display brief
-
 Route::get('/brief_list', [Brief_controller::class, 'display_briefs']);
 
+// insert brief
 Route::post('/insert_brief', [Brief_controller::class, 'insert_brief']);
+
+//edit brief view
+Route::get('/edit_brief/{id}', [Brief_controller::class, 'edit_brief_view']);
+
+// save updated brief 
+Route::post('/updated_brief/{id}', [Brief_controller::class, 'updated_brief']);
