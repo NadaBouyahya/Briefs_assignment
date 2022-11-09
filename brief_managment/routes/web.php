@@ -75,3 +75,12 @@ Route::post('/updated_brief/{id}', [Brief_controller::class, 'updated_brief']);
 
 // show tasks 
 Route::post('/task_list', [task_controller::class, 'updated_brief']);
+
+// add task 
+Route::get('/add_task_view/{id}', [task_controller::class, 'add_task_view']);
+
+Route::post('/insert_task/{id}', [task_controller::class, 'insert_task']);
+
+//edit task
+
+route

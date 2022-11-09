@@ -9,7 +9,6 @@
 <body>
     <form action="/student_saved/{{$student->id}}" method="POST">
         @csrf
-    
         <label for="lname">nom:</label> <input type="text" name="lname" value="{{$student->nom}}">
         <label for="fname">prénom:</label> <input type="text" name="fname" value="{{$student->prénom}}">
         <label for="email">email:</label> <input type="text" name="email" value="{{$student->email}}">
