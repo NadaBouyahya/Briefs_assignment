@@ -37,6 +37,8 @@
                     <p> <b>from</b> : <span>{{$brief_tasks->task_start_time}}</span> <b>to</b> : <span>{{$brief_tasks->task_end_time}}</p>
                     {{-- <button type="submit" name="update_task">modifier</button> --}}
                     <a class="" href="/edit_task_view/{{$brief_tasks->id_task}}">modifier</a>
+                    <a class="" href="/delete_task/{{$brief_tasks->id_task}}">delete</a>
+
                 </div>
                 @endforeach
             @endif

@@ -5,6 +5,7 @@ use App\Http\Controllers\task_controller;
 
 use App\Http\Controllers\promotions_controller;
 use App\Http\Controllers\students_controller;
+use App\Models\brief;
 use App\Models\Promotion;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
@@ -69,6 +70,9 @@ Route::get('/edit_brief/{id}', [Brief_controller::class, 'edit_brief_view']);
 // save updated brief 
 Route::post('/updated_brief/{id}', [Brief_controller::class, 'updated_brief']);
 
+//delete_brief
+Route::get('/delete_brief/{id}', [Brief_controller::class, 'delete_brief']);
+
 
 
 // show tasks 
@@ -81,3 +85,5 @@ Route::post('/insert_task/{id}', [task_controller::class, 'insert_task']);
 //edit task
 Route::get('/edit_task_view/{id}', [task_controller::class, 'edit_task_form']);
 Route::post('/updated_task/{id}', [task_controller::class, 'update_task']);
+
+Route::get('/delete_task/{id}', [task_controller::class, 'delete_task']);

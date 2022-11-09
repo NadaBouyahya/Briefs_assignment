@@ -38,6 +38,12 @@ class Brief_controller extends Controller
                        'livrasion_date'=>$updating_req->date_livraison));
     }
 
+    public function delete_brief($id_brf){
+        $brief = brief::where('id_brief', $id_brf);
+        $brief->delete();
+        return redirect('brief_list');
+    }
+
     // public function updated_brief(Request $updating_req, $id){
     //     $updated_brief = brief::where('id_brief', $id)->first();
 
