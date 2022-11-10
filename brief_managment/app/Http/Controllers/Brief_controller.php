@@ -11,13 +11,15 @@ class Brief_controller extends Controller
 {
 
     //select all briefs :
-    public function display_briefs(){
+    public function display_briefs()
+    {
         $briefs = brief::all();
         return view('brief_list', compact('briefs'));
     }
 
 
-    public function insert_brief(Request $brief_form_request){
+    public function insert_brief(Request $brief_form_request)
+    {
         $briefs = new brief();
         $briefs->brief_title = $brief_form_request->brief_title;
         $briefs->livrasion_date = $brief_form_request->date_livraison;
@@ -27,19 +29,24 @@ class Brief_controller extends Controller
         return redirect('brief_list');
     }
 
-    public function edit_brief_view($id){
+    public function edit_brief_view($id)
+    {
         $brief = brief::where('id_brief', $id)->first();
         return view('edit_brief', compact('brief'));
     }
 
-    public function updated_brief(Request $updating_req, $id){
+    public function updated_brief(Request $updating_req, $id)
+    {
         brief::where('id_brief', $id)
-        ->update(array('brief_title'=>$updating_req->brief_title,
-                       'creation_date'=>$updating_req->date_creation,
-                       'livrasion_date'=>$updating_req->date_livraison));
+            ->update(array(
+                'brief_title' => $updating_req->brief_title,
+                'creation_date' => $updating_req->date_creation,
+                'livrasion_date' => $updating_req->date_livraison
+            ));
     }
 
-    public function delete_brief($id_brf){
+    public function delete_brief($id_brf)
+    {
         $brief = brief::where('id_brief', $id_brf);
         $brief->delete();
         return redirect('brief_list');
@@ -55,13 +62,24 @@ class Brief_controller extends Controller
     //     $updated_brief->save();
     // }
 
-    public function attachBrief($brief_id, $student_id){
+    public function attachBrief($brief_id, $student_id)
+    {
         $student = Student::where('id', $student_id)->first();
         $student->briefs()->attach($brief_id);
     }
 
-    public function detachBrief($brief_id, $student_id){
+    public function detachBrief($brief_id, $student_id)
+    {
         $student = Student::where('id', $student_id)->first();
         $student->briefs()->detach($brief_id);
+    }
+
+    public function assignAll($briefId)
+    {
+        $student = student::all();
+        foreach ($student as $student) {
+            $student->briefs()->attach($briefId);
+        }
+        // return redirect('BriefAssign/' . $briefId);
     }
 }

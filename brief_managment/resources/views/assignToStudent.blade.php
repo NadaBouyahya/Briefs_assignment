@@ -9,6 +9,7 @@
 </head>
 
 <body>
+    <a href="/assigned_toAll/{{$id_brief}}">Assigner a tout</a>
     <table>
         <thead>
             <th>nom</th>

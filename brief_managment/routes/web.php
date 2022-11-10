@@ -92,3 +92,5 @@ Route::get('/delete_task/{id}', [task_controller::class, 'delete_task']);
 Route::get('/assign_brief/{id_brief}/{id_student}', [Brief_controller::class, 'attachBrief']);
 
 Route::get('/detach_brief/{id_brief}/{id_student}', [Brief_controller::class, 'detachBrief']);
+
+Route::get('/assigned_toAll/{id_brief}', [Brief_controller::class, 'assignAll']);
