@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class task extends Model
 {
     // use HasFactory;
+    protected $primaryKey = 'id_task';
     protected $table = 'task';
     public function brief(){
         return $this->belongsTo(brief::class, 'briefTask_id', 'id_task');

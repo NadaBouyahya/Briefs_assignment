@@ -49,11 +49,11 @@ class task_controller extends Controller
 
     public function delete_task($id){
         $target_task = task::where('id_task', $id)->first();
+        $target_task->delete();
         // return $target_task;
         // return  $target_task[0]->briefTask_id;
-        // $id_brief = $target_task[0]->briefTask_id;
-        $target_task->delete();
-        // return redirect("/edit_brief/{$id_brief}");
+        $id_brief = $target_task->briefTask_id;
+        return redirect("/edit_brief/{$id_brief}");
 
     }
 }
