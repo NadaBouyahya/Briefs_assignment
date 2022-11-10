@@ -46,7 +46,7 @@ Route::get('/student_form/{id}', [students_controller::class, 'form_students'])-
 Route::post('/insert_student', [students_controller::class, 'add_student']);
 
 //show students list 
-// Route::get('/index_students', [students_controller::class, 'show_students']);
+Route::get('/index_students/{id_brief}', [students_controller::class, 'show_students']);
 
 // show edit student view
 Route::get('/edit_student_form/{id}', [students_controller::class, 'edit_student_view']);
@@ -87,3 +87,8 @@ Route::get('/edit_task_view/{id}', [task_controller::class, 'edit_task_form']);
 Route::post('/updated_task/{id}', [task_controller::class, 'update_task']);
 
 Route::get('/delete_task/{id}', [task_controller::class, 'delete_task']);
+
+// assign brief 
+Route::get('/assign_brief/{id_brief}/{id_student}', [Brief_controller::class, 'attachBrief']);
+
+Route::get('/detach_brief/{id_brief}/{id_student}', [Brief_controller::class, 'detachBrief']);

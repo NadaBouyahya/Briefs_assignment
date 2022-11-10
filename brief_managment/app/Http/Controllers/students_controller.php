@@ -26,10 +26,10 @@ class students_controller extends Controller
 
     }
 
-    // public function show_students(){
-    //     $students = Student::all();
-    //     return view('studentsList', compact('students'));
-    // }
+    public function show_students($id_brief){
+        $AllStudents = Student::all();
+        return view('assignToStudent', compact('AllStudents', 'id_brief'));
+    }
 
     public function edit_student_view($id){
         $id_student = $id;

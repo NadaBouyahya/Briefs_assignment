@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\brief;
+use App\Models\Student;
 use Illuminate\Http\Request;
 
 class Brief_controller extends Controller
@@ -53,4 +54,14 @@ class Brief_controller extends Controller
 
     //     $updated_brief->save();
     // }
+
+    public function attachBrief($brief_id, $student_id){
+        $student = Student::where('id', $student_id)->first();
+        $student->briefs()->attach($brief_id);
+    }
+
+    public function detachBrief($brief_id, $student_id){
+        $student = Student::where('id', $student_id)->first();
+        $student->briefs()->detach($brief_id);
+    }
 }

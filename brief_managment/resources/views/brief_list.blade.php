@@ -37,7 +37,10 @@
                     <td>{{ $brief->brief_title }}</td>
                     <td>{{ $brief->creation_date }}</td>
                     <td>{{ $brief->livrasion_date }}</td>
-                    <td><a href="/edit_brief/{{$brief->id_brief}}">edit</a> <a href="/delete_brief/{{$brief->id_brief}}">delete</a></td>
+                    <td><a href="/edit_brief/{{$brief->id_brief}}">edit</a>
+                         <a href="/delete_brief/{{$brief->id_brief}}">delete</a>
+                        <a href="/index_students/{{$brief->id_brief}}">Assigner</a>
+                    </td>
                 </tr>
             @endforeach
         </tbody>
