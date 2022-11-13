@@ -16,7 +16,7 @@
 
 <body>
     <section id="main_content">
-        <h1>Les Promotions</h1>
+        <h1>Promotions</h1>
         <div id="first_div">
             <input type="text" id="search" placeholder="rechercher apprenant">
             <a href="{{ route('add_promotion') }}">Ajouter promotion</a>

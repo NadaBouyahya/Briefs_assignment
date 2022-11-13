@@ -20,14 +20,24 @@
     <section id="main_content">
 
         <div id="first_div">
-            <a id="add_student_link" href="{{ route('add_student', ['id' => $new_data[0]->id_promotion]) }}">Ajouter apprenant</a>
-            <form class="editPromo_form" action="/edit/{{ $new_data[0]->id_promotion }}" method="POST">
+            <a id="add_student_link" href="{{ route('add_student', ['id' => $promotion_data->id]) }}">Ajouter apprenant</a>
+            <form class="editPromo_form" action="/edit/{{ $promotion_data->id }}" method="POST">
                 @csrf
                 {{-- <span>Nom de promotion</span> --}}
-                <input type="text" name='name' value="{{ $new_data[0]->name }}">
+                <input type="text" name='name' value="{{ $promotion_data->name }}">
                 <button type="submit">save</button>
             </form>
+        </div>
 
+        <div>
+            <p>Brief assigner à la promotion </p>
+           
+            <ul>
+                @foreach ($briefs[0] as $brief)
+                <li>{{ $brief->brief_title}}</li>
+                @endforeach
+            </ul>
+        
         </div>
 
         
@@ -41,8 +51,8 @@
                 </thead>
     
                 <tbody>
-                    @if ($new_data[0]->nom != null)
-                        @foreach ($new_data as $row)
+                    @if ($promotion_data->nom != null)
+                        @foreach ($promotion_data as $row)
                             <tr>
                                 <td>{{ $row->prénom }}</td>
                                 <td>{{ $row->nom }}</td>

@@ -7,5 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Promotion extends Model
 {
-    use HasFactory;
+    // use HasFactory;
+    public function student(){
+        return $this->hasMany(Student::class, 'promo_id', 'id');
+    }
 }

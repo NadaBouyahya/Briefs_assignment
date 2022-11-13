@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Models\Promotion;
 use Illuminate\Http\Request;
+use PhpParser\Node\Stmt\Foreach_;
 
 class promotions_controller extends Controller
 {
@@ -26,24 +27,15 @@ class promotions_controller extends Controller
     }
 
     public function selectBy_id($id_prom){
-        $new_data = Promotion::select(
-            'promotions.id as id_promotion',
-            'students.id as id_student',
-            'name',
-            'prénom',
-            'nom',
-            'email'
-        )
-        ->leftJoin('students', 'promotions.id', '=', 'students.promo_id')
-        ->where('promotions.id', $id_prom)
-        ->get();
-
-        return view('edit_form', compact('new_data'));
+        $promotion_data = Promotion::where('id', $id_prom)->first();
+        $promo_briefs = [];
+        $promotion_data->student;
+        foreach( $promotion_data->student as $promoStudents ){
+            $promo_briefs [] = $promoStudents->briefs;
+        }
+        $briefs = collect($promo_briefs)->unique('pivot');
+        return view('edit_form', compact('promotion_data', 'briefs'));
     }
-    // public function selectBy_id($id_parametre){
-    //     $promotion = Promotion::where('id', $id_parametre)->get();
-    //     return view('edit_form', compact('promotion'));
-    // }
 
     public function save_edit(Request $request, $id){
         $promotion = Promotion::where('id', $id)->first();
